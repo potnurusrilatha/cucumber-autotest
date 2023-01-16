@@ -42,6 +42,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Install Chrome
+      run: chmod +x ./scripts/install_chrome.sh
+          ./scripts/install_chrome.sh 
     - name: Test with Maven
       run: mvn clean test
 
