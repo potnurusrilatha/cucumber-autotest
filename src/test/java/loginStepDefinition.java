@@ -4,6 +4,7 @@ import cucumber.annotation.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,11 @@ public class loginStepDefinition {
     WebDriver driver;
     @Given("^navigate to saucedemo page$")
     public void navigate(){
-        driver=new ChromeDriver();
+        var options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        driver=new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }
     @When("^user logs in$")
