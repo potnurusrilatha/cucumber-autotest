@@ -20,6 +20,7 @@ public class loginStepDefinition {
         options.addArguments("--headless");
         driver=new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
+        System.out.println("Navigated to saucedemo page successfully");
     }
     @When("^user logs in$")
     public void login(){
@@ -33,6 +34,7 @@ public class loginStepDefinition {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ; //Deprecated
 
         driver.findElement(By.id("login-button")).click();
+        System.out.println("User logged in successfully");
 
     }
     @Then("^home page should be displayed$")
@@ -40,6 +42,7 @@ public class loginStepDefinition {
         String expectedText="Swag Labs";
         String actualText = driver.getTitle();
         assertEquals(actualText, expectedText);
+        System.out.println("Home page loaded successfully");
         driver.quit();
     }
 }
