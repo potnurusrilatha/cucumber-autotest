@@ -22,7 +22,7 @@ public class LoginTest {
     public String URL="https://www.saucedemo.com/";
 
     //--> Junit //@BeforeEach
-    //TestNG --> Trying to create a pull request
+    //TestNG -->
     @BeforeTest
     public void setup(){
         File file = new File("src/main/resources/chromedriver.exe");
